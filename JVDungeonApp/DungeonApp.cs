@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JVDungeonApp
 {
-    class Program
+    class DungeonApp
     {
         static void Main(string[] args)
         {
