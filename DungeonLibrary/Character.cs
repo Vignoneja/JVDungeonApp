@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DungeonLibrary;
 
 namespace DungeonLibrary
 {
@@ -30,14 +29,16 @@ namespace DungeonLibrary
             get { return _life; }
             set
             {
+
                 if (value <= MaxLife)
                 {
+
                     _life = value;
                 }//END IF
                 else
                 {
                     _life = MaxLife;
-                }//END ELSE                
+                }//END ELSE
             }//END SET
         }//END INT LIFE
 
@@ -45,21 +46,25 @@ namespace DungeonLibrary
 
         #region Constructors for Character
 
-        //Constuctors
+        //Constuctors        
 
         #endregion
 
         #region Methods for Character
 
-        //Methods
+        //Methods        
+
         public virtual int CalcBlock()
         {
+
             return Block;
-        }//END CalcBlock()
+        }//END CALCBLOCK()
+
         public virtual int CalcHitChance()
         {
             return HitChance;
         }//END CALCHITCHANCE()
+
         public virtual int CalcDamage()
         {
             return 0;

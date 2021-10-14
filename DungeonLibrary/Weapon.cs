@@ -8,6 +8,7 @@ namespace DungeonLibrary
 {
     public class Weapon
     {
+
         #region Fields for Weapon
 
         //Fields
@@ -22,7 +23,6 @@ namespace DungeonLibrary
         public string Name { get; set; }
         public int BonusHitChance { get; set; }
         public bool IsTwoHanded { get; set; }
-        public int Cost { get; set; }
         public int MinDamage
         {
             get { return _minDamage; }
@@ -37,23 +37,21 @@ namespace DungeonLibrary
                     _minDamage = 1;
                 }//END ELSE
             }//END SET
-        }//END INT MIN DAMAGE
+        }//END INT MINDAMAGE
 
         #endregion
 
         #region Constructors for Weapon
 
         //Constuctors
-        public Weapon(int minDamage, int maxDamage, string name, int bonusHitChance, bool isTwoHanded, int cost)
+        public Weapon(int minDamage, int maxDamage, string name, int bonusHitChance, bool isTwoHanded)
         {
             MaxDamage = maxDamage;
             MinDamage = minDamage;
             Name = name;
             BonusHitChance = bonusHitChance;
-            IsTwoHanded = isTwoHanded;
-            Cost = cost;
-        }//END FQCTOR
-
+            IsTwoHanded = IsTwoHanded;
+        }//END FQ CTOR
         #endregion
 
         #region Methods for Weapon
@@ -61,12 +59,12 @@ namespace DungeonLibrary
         //Methods
         public override string ToString()
         {
-            return string.Format($"{Name}\t{MinDamage} to {MaxDamage}\n" +
-                $"Bonus Hit: {BonusHitChance}%\t{(IsTwoHanded ? "Two-Handed" : "One-Handed")}");
+            return string.Format("{0}\t{1} to {2} Damage\n" +
+                "Bonus Hit: {3}%\t{4}",
+                Name, MinDamage, MaxDamage, BonusHitChance, IsTwoHanded ? "Two-Handed" : "One-Handed");
         }//END TOSTRING()
 
         #endregion
-
 
     }//END CLASS
 

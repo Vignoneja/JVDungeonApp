@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace DungeonLibrary
 {
-    class Monster : Character
+    public class Monster : Character
     {
 
         #region Fields for Monster
 
         //Fields
         private int _minDamage;
+
 
         #endregion
 
@@ -26,7 +27,6 @@ namespace DungeonLibrary
             get { return _minDamage; }
             set
             {
-                //Cannot be more than maxDamage or less than 1
                 if (value > 0 && value <= MaxDamage)
                 {
                     _minDamage = value;
@@ -76,14 +76,14 @@ namespace DungeonLibrary
                 Name, Life, MaxLife, MinDamage, MaxDamage, Block, Description);
         }//END TOSTRING()
 
-         public override int CalcDamage()
+        public override int CalcDamage()
         {
-            //return base.CalcDamage(); - returns 0 in Character, we want to change that functionality for Monster.
             Random rand = new Random();
-            return rand.Next(MinDamage, MaxDamage + 1);//We add 1 to MaxDamage because the upper bound in Next() is exclusive.
+            return rand.Next(MinDamage, MaxDamage + 1);
         }//END CALCDAMAGE
 
         #endregion
+
     }//END CLASS
 
 }//END NAMESPACE
